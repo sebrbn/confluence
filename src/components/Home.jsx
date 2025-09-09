@@ -1,21 +1,31 @@
 import React from "react";
-import heroImage from "../assets/main3.jpg";
+import heroVideo from "../assets/hero.mov"; // or main3.mp4
 import confluenceLogo from "../assets/sticker.png";
 import EventHighlights from "./EventHighlights";
+import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import NoticeBoard from "./NoticeBoard";
 
 export default function Home() {
   return (
     <>
+      {/* ✅ Notice Board */}
+      <NoticeBoard />
+
       {/* Hero Section */}
       <section className="relative w-full text-white overflow-x-hidden h-[80vh] sm:h-screen">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat sm:bg-fixed"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        />
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideo} type="video/quicktime" /> {/* for .mov fallback */}
+          Your browser does not support the video tag.
+        </video>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/70 sm:bg-black/50 z-10" />
@@ -27,10 +37,12 @@ export default function Home() {
             <img
               src={confluenceLogo}
               alt="Confluence Logo"
-              className="w-48 sm:w-72 md:w-[28rem] lg:w-[32rem] max-w-full"
+              // className="w-48 sm:w-72 md:w-[28rem] lg:w-[32rem] max-w-full"
+                            className="w-50 sm:w-75 md:w-[32rem] lg:w-[40rem] max-w-full"
+
             />
             <span
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none"
+              className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none"
               style={{ fontFamily: "Orbitron, sans-serif" }}
             >
               2.0
@@ -38,13 +50,16 @@ export default function Home() {
           </div>
 
           {/* Title */}
-          <p className="text-base sm:text-xl md:text-3xl text-gray-100 tracking-wide">
+          <p className="text-base sm:text-sm md:text-lg  tracking-wide ">
             The Largest Industry–Academia Meet
+          </p>
+          <p className="text-base sm:text-lg md:text-2xl text-gray-10 tracking-wide italic ">
+            Future of Sovereignty and Self-reliance
           </p>
 
           {/* Date */}
-          <p className="text-sm sm:text-lg md:text-2xl text-gray-200 mt-2">
-            21–27 September · Kochi
+          <p className="text-sm sm:text-sm md:text-xl text-gray-200 mt-2 ">
+            22–28 September · Kochi
           </p>
 
           {/* Button */}
@@ -52,7 +67,7 @@ export default function Home() {
             to="/countdown"
             className="inline-block px-5 py-2 bg-white text-black text-sm sm:text-base font-semibold rounded hover:bg-gray-200 transition"
           >
-            Learn More
+            Launching Soon
           </Link>
 
           {/* Scroll Indicator */}
@@ -63,6 +78,11 @@ export default function Home() {
       {/* Event Highlights */}
       <section>
         <EventHighlights />
+      </section>
+
+      {/* Footer */}
+      <section>
+        <Footer />
       </section>
     </>
   );
