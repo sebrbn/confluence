@@ -98,7 +98,7 @@ const highlights = [
   },
   {
     step: "05",
-    title: "One Day International Seminar On Sustainable Development ", 
+    title: "One Day International Seminar on Sustainable Development ", 
     desc: "Theme: Energy Future for Sustainable Development of the World",
     date: "26 September 2025",
     venue: "Renewable Energy Centre, Mithradham, Aluva",
@@ -110,7 +110,7 @@ const highlights = [
   }, 
   {
     step: "06",
-    title: "Confluence: Industry Academia Summit Future of Sovereignty and Selfreliance",
+    title: "Confluence: Industry Academia Summit",
     desc: "Theme: Future of Sovereignty and Self-reliance",
     date: "27 September 2025",
     venue: "Rajagiri School of Engineering & Technology, Kakkanad",
